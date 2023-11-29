@@ -8,11 +8,11 @@
                 </h3>
                 <ul>
                     @foreach(\App\Helpers\getSettingCategory('footer1')->posts as $p)
-                        <li>
+                        <!-- <li>
                             <a href="{{route('n.show',$p->slug)}}">
                                 {{$p->title}}
-                            </a>
-                        </li>
+                            </a> 
+                        </li> -->
                     @endforeach
                 </ul>
             </div>
@@ -22,29 +22,29 @@
                 </h3>
                 <ul>
                     @foreach(\App\Helpers\getSettingCategory('footer2')->posts as $p)
-                        <li>
+                        <!-- <li>
                             <a href="{{route('n.show',$p->slug)}}">
                                 {{$p->title}}
                             </a>
-                        </li>
+                        </li> -->
                     @endforeach
                 </ul>
             </div>
 
             <div class="col-md-3">
                 <h3>
-                    اطلاعات تماس
+                    聯絡方式
                 </h3>
                 <p class="text-secondary">
-                    افراد گروه سوم از اهمیت به پایان رساندن آگاه هستند. آنها با تفکر منطقی، طرحی روشن ارائه می‌کنند. آنها نه تنها برای پایان دادن به پروژه‌ی خود در آینده برنامه ریزی می‌کنند، بلکه به تمام نتایج و عواقب اجرای آن برنامه هم می‌اندیشند. این افراد کسانی هستند که هنر به پایان رساندن را می‌دانند.
+                    ！輸入您的聯絡資訊
                 </p>
             </div>
             <div class="col-md-3">
                 <h3>
-                    نمادها
+                    商標
                 </h3>
                 <div class="text-center namad">
-                    {!! \App\Helpers\getSetting('footer3') !!}
+                <img src="images/cafe&cake.png" width="145px" />
                 </div>
             </div>
             <div class="col-md-12 pb-4">
@@ -67,8 +67,11 @@
                         </a>
                     @endif
                     @if(trim(\App\Helpers\getSetting('soc_tw')) != '')
-                        <a target="_blank" href="{{\App\Helpers\getSetting('soc_tw')}}">
-                            <i class="fab fa-twitter"></i>
+                        <a target="_blank" href="https://www.instagram.com/">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a target="_blank" href="https://line.me/R/ti/p/@711zwvdd?from=page&accountId=711zwvdd"> 
+                            <i class="fab fa-line"></i>
                         </a>
                     @endif
                     @if(trim(\App\Helpers\getSetting('soc_yt')) != '')

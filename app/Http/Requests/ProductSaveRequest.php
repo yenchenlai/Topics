@@ -28,11 +28,11 @@ class ProductSaveRequest extends FormRequest
     {
         return [
             //
-//            'name' => ['required', 'string', 'min:5', 'max:128','unique:products,name,'.$this->name],
-            'name' => ['required', 'string', 'min:5', 'max:128',Rule::unique('products')->ignore($this->id)],
+//            'name' => ['required', 'string', 'min:1', 'max:128','unique:products,name,'.$this->name],
+            'name' => ['required', 'string', 'min:1', 'max:128',Rule::unique('products')->ignore($this->id)],
             'sku' => ['nullable', 'string', 'min:1', 'max:128',Rule::unique('products')->ignore($this->id)],
-            'body' => ['nullable', 'string', 'min:5'],
-            'excerpt' => ['required', 'string', 'min:5'],
+            'body' => ['nullable', 'string', 'min:1'],
+            'excerpt' => ['required', 'string', 'min:1'],
             'active'=>['nullable','boolean'],
             'meta' => ['nullable'],
             'cat_id' => ['required', 'exists:cats,id'],

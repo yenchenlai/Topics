@@ -18,7 +18,7 @@
                            <ul class="product-info">
                                <li>
                                    <i class="fa fa-money-bill"></i>
-                                   قیمت
+                                   價格
                                    <b>
                                        <b class="price">
                                           {{$pro->getPrice()}}
@@ -27,11 +27,11 @@
                                </li>
                                <li>
                                    <i class="fa fa-weight"></i>
-                                   وزن
+                                   重量
                                    <b>
                                        <b>
                                            {{$pro->getMeta('weight')}}
-                                           گرم
+                                           熱的
                                        </b>
                                    </b>
                                </li>
@@ -56,14 +56,14 @@
                                @endforeach
 
                            </ul>
-                           <a data-id="{{$pro->id}}" class="btn btn-warning btn-block mt-3 wow bounceInUp add-to-card" data-wow-delay="1s"
+                           <!-- <a data-id="{{$pro->id}}" class="btn btn-warning btn-block mt-3 wow bounceInUp add-to-card" data-wow-delay="1s"
                               data-wow-duration="2s">
                                <i class="fa fa-shopping-cart"></i>
-                               افزودن به سبد خرید
-                           </a>
+                               加入購物車
+                           </a> -->
                            <a href="{{route('compare.rem',$pro->slug)}}" class="btn btn-danger btn-block mt-3">
                                <i class="fa fa-times"></i> &nbsp;
-                               حذف از مقایسه
+                               從比較中刪除
                            </a>
                        </div>
 

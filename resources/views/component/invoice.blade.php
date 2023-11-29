@@ -205,7 +205,7 @@
                    class="btn btn-success w-100">
                     <i class="far fa-credit-card"></i>
                     &nbsp;
-                    پرداخت آنلاین
+                    線上支付
                 </a>
             </div>
             @if(auth('customer')->user()->credit > 0)

@@ -16,7 +16,7 @@
 {{--                            <img class=" mt-1 me-3 float-start icon-size" style="position: relative;top: -25px"--}}
 {{--                                 src="{{asset('images/track.svg')}}" alt="ارسال آنی">--}}
 {{--                            <h6 class="mt-1 text-muted">--}}
-{{--                                ارسال آنی در تهران--}}
+{{--                                即時送貨--}}
 {{--                            </h6>--}}
                             <hr>
                         </div>
@@ -45,7 +45,7 @@
                     <h2 class="col-md-12 text-center align-items-center justify-content-center d-flex" style="min-height: 75vh">
                         <img src="{{asset('images/404.png')}}" class="404" alt="404" style="width: 250px">
                         <br>
-                        محصولی مطابق با درخواست شما پیدا نشد
+                        沒有找到符合您要求的產品
                     </h2>
                 @endif
             </div>

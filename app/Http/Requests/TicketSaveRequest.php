@@ -26,7 +26,7 @@ class TicketSaveRequest extends FormRequest
         return [
             //
             'title' => ['nullable','string'],
-            'body'=>['required','string','min:5']
+            'body'=>['required','string','min:1']
         ];
     }
 }

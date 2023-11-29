@@ -59,7 +59,7 @@
                             </a>
                         </li>
                         <li class="breadcrumb-item">
-                            <a href="{{route('products')}}">محصولات</a>
+                            <a href="{{route('products')}}">產品</a>
                         </li>
                         @if ($cat->parent != null)
                             <li class="breadcrumb-item">
@@ -101,12 +101,12 @@
                         <hr>
 
                         <h2>
-                            اطلاعات محصول:
+                            :產品資訊
                         </h2>
                         <table class="table table-hover product-table" id="product-table">
                             <tr>
                                 <th>
-                                    نام محصول
+                                    產品名稱
                                 </th>
                                 <td>
                                     {{$pro->name}}
@@ -114,7 +114,7 @@
                             </tr>
                             <tr>
                                 <th>
-                                    کد محصول
+                                剩餘數量
                                 </th>
                                 <td>
                                     {{$pro->getCode()}}
@@ -122,7 +122,7 @@
                             </tr>
                             <tr>
                                 <th>
-                                    قیمت
+                                價格
                                 </th>
                                 <td class="main-price">
                                     <b>
@@ -143,7 +143,7 @@
                             @if($pro->hasMeta('color'))
                                 <tr>
                                     <th>
-                                        انتخاب رنگ
+                                    顏色選擇
                                     </th>
                                     <td>
                                         <div class="color-pick">
@@ -154,7 +154,7 @@
                             @endif
                             <tr>
                                 <th style="vertical-align: middle">
-                                    تعداد
+                                數量
                                 </th>
                                 <td>
                                     {{--                                                <div id="counting" class="text-muted float-start mt-2"></div>--}}
@@ -173,7 +173,7 @@
                             @if($pro->hasMeta('warranty'))
                                 <tr>
                                     <th>
-                                        گارانتی
+                                    保固單
                                     </th>
                                     <td>
                                         @php $ws = json_decode(\App\Helpers\getProp('warranty')->options,'true'); @endphp
@@ -187,7 +187,7 @@
                             @endif
                             <tr>
                                 <th>
-                                    امتیاز
+                                分數
                                 </th>
                                 <td>
                                     <div class="star-rating js-star-rating" dir="ltr">
@@ -215,14 +215,13 @@
                                    data-wow-duration="2s">
                                     <i class="fa fa-compass mt-2 mb-2"></i>
                                     &nbsp;
-                                    مقایسه کالا
-                                </a>
+                                    產品對比      </a>
                             </div>
                             <div class="col">
                                 <a href="{{route('card.addq',['',''])}}"
                                    class="add-to-card-q btn btn-primary w-100 mt-1">
                                     <img src="{{asset('images/basket.svg')}}" class="basket-icon" alt="">
-                                    افزودن به سبد خرید
+                                    加入購物車
                                 </a>
 
                             </div>
@@ -231,11 +230,11 @@
                     </div>
                     <div class="col-12">
                         <ul class="tabs cl" id="my-tabs">
-                            <li class="active lc" data-content="tab-detail">مشخصات فنی</li>
-                            <li class="lc" data-content="tab-analyze">تحلیل و بررسی</li>
-                            <li class="lc" data-content="tab-comment"> دیدگاه کاربران</li>
-                            <li class="lc" data-content="tab-question"> پرسش و پاسخ</li>
-                            <li class="lc" data-content="tab-chart">نمودار قیمت</li>
+                            <li class="active lc" data-content="tab-detail">產品規格</li>
+                            <li class="lc" data-content="tab-analyze">分析</li>
+                            <li class="lc" data-content="tab-comment">使用者評價</li>
+                            <li class="lc" data-content="tab-question">問題與答案</li>
+                            <li class="lc" data-content="tab-chart">價格走勢圖</li>
                         </ul>
                         <div class="tab-container">
                             <div id="tab-detail" class="active">
@@ -274,7 +273,7 @@
                                     <div class="alert alert-secondary" id="comment-form">
                                         @include('starter-kit::component.err')
                                         <h5>
-                                            ارسال دیدگاه
+                                        提交評論
                                         </h5>
                                         <form class="xsumbmiter non-print" method="post" id="comment-form-body"
                                               action="no-action">
@@ -289,7 +288,7 @@
                                                         </label>
 
                                                         <textarea required="" minlength="10" id="comment-message"
-                                                                  name="body" class="form-control " placeholder="پیام"
+                                                                  name="body" class="form-control " placeholder="資訊"
                                                                   rows="4"></textarea>
                                                     </div>
                                                 </div>
@@ -297,7 +296,7 @@
                                                     <div class="form-group">
 
                                                         <input name="name" required="" minlength="2" type="text"
-                                                               class="form-control " placeholder="نام" value=""
+                                                               class="form-control " placeholder="姓名" value=""
                                                                id="name">
                                                     </div>
                                                 </div>
@@ -305,14 +304,14 @@
                                                     <div class="form-group">
 
                                                         <input required="" name="email" id="email" type="email"
-                                                               class="form-control " placeholder="ایمیل" value="">
+                                                               class="form-control " placeholder="電子郵件" value="">
                                                     </div>
                                                 </div>
 
                                                 <div class="col-md-12">
                                                     <label> &nbsp;</label>
                                                     <input name="" type="submit" class="btn btn-primary mt-2"
-                                                           value="ارسال دیدگاه">
+                                                           value="提交評論">
                                                 </div>
                                             </div>
                                         </form>
@@ -325,12 +324,12 @@
                                     @foreach($pro->quesions_asnwered as $q)
                                         <li class="list-group-item">
                                             <span class="badge bg-secondary">
-                                                پرسش
+                                            問題
                                             </span>
                                             {{$q->body}}
                                             <hr>
                                             <span class="badge bg-info">
-                                                پاسخ
+                                            回覆
                                             </span>
                                             <b>
                                                 {{$q->answer}}
@@ -340,7 +339,7 @@
                                 </ul>
                                 @if( !Auth::guard('customer')->check() )
                                     <h2 class="text-center p-4">
-                                        شما برای ارسال سوال باید وارد حساب کاربری خود شوید
+                                    您必須登入您的帳戶才能發表問題
                                     </h2>
                                 @else
                                     <div class="comment-containerx">
@@ -348,16 +347,16 @@
                                             <img
                                                 src="https://gravatar.com/avatar/{{md5(Auth::guard('customer')->user()->email)}}?s=80"
                                                 class="avatar">
-                                            <span class="name">نام کاربر</span>
+                                            <span class="name">使用者名稱</span>
                                         </div>
                                         <form id="question-form">
                                             <textarea class="form-control" dir="rtl" name="body"
-                                                      placeholder="سوال شما..."></textarea>
+                                                      placeholder="...你的問題"></textarea>
                                             <input type="hidden" name="product_id" value="{{$pro->id}}">
                                         </form>
                                         <div class="btn btn-primary mt-3" id="question-send"
                                              data-url="{{route('question.send')}}">
-                                            ارسال پرسش
+                                             發送問題
                                         </div>
                                     </div>
 
@@ -384,7 +383,7 @@
                 </div>
                 <div class="wow fadeInRight">
                     <h4 class="mt-3">
-                        محصولات مشابه
+                        類似產品
                     </h4>
                     <div class="owl-carousel owl-sq">
                         @foreach ($cat->products()->where('stock_quantity','>', 0)->limit(10)->get() as $p)

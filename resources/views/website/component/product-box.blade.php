@@ -16,13 +16,13 @@
             {{$p->name}}
         </h4>
         <h5>
-            کد محصول:
+            剩餘數量:
            {{$p->getCode()}}
         </h5>
         @if(!$p->hasDiscount())
             @if($p->stock_quantity == 0)
                 <b class="text-danger d-block text-center p-2">
-                    ناموجود
+                    已售完
                 </b>
             @else
                 <b class="d-block text-center p-2">
@@ -47,7 +47,7 @@
                 </div>
             @else
                 <b class="text-danger d-block text-center">
-                    ناموجود
+                    已售完
                 </b>
             @endif
         @endif
@@ -56,7 +56,7 @@
         <div class="pb-3 text-center">
             <a href="{{route('card.add',$p->slug)}}" class="add-to-card btn btn-primary">
                 <i class="icofont-shopping-cart"></i> &nbsp;
-                افزودن به سبد خرید
+                加入購物車
             </a>
         </div>
     @endif

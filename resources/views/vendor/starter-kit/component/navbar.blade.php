@@ -180,7 +180,7 @@
         </li>
 
 
-        <li id="cms" class="main-nav">
+        <!-- <li id="cms" class="main-nav">
             <a>
                 <i class="fab fa-internet-explorer"></i>
                 &nbsp;
@@ -352,7 +352,7 @@
                     </li>
                 @endif
             </ul>
-        </li>
+        </li> -->
 
         @if(auth()->user()->hasAnyAccess('comment'))
             <li>
@@ -362,22 +362,22 @@
                 </a>
             </li>
         @endif
-        @if(auth()->user()->hasAnyAccess('setting'))
+        <!-- @if(auth()->user()->hasAnyAccess('setting'))
             <li>
                 <a href="{{route('admin.setting.index')}}">
                     <i class="fa fa-cogs"></i>
                     {{__("Setting")}}
                 </a>
             </li>
-        @endif
-        @if(auth()->user()->hasAnyAccess('attachment'))
+        @endif -->
+        <!-- @if(auth()->user()->hasAnyAccess('attachment'))
             <li>
                 <a href="{{route('admin.attachment.index')}}">
                     <i class="fa fa-paperclip"></i>
                     {{__("Attachments")}}
                 </a>
             </li>
-        @endif
+        @endif -->
         @if(auth()->user()->hasAnyAccess('contact'))
             <li>
                 <a href="{{route('admin.contact.index')}}">

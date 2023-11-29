@@ -109,7 +109,7 @@
                 {{$invoice->customer->name}}
             </h4>
             <h5>
-                شماره تماس:
+                電話號碼:
                 {{$invoice->customer->mobile}}
 
             </h5>
@@ -118,26 +118,26 @@
         <br>
         <div class="border-x">
             <h4>
-                گیرنده:
+                付款者:
                 {{$invoice->desc}}
             </h4>
             <p>
-                آدرس:
+                地址:
                 {{$invoice->address_alt}}
             </p>
         </div>
     @else
         <div class="border-x">
             <h4>
-                گیرنده:
+                付款者:
                 {{$invoice->customer->name}}
             </h4>
             <h5>
-                شماره تماس:
+                電話號碼:
                 {{$invoice->customer->mobile}}
             </h5>
             <p>
-                آدرس:
+                地址:
                 {{$invoice->getAddress()}}
             </p>
         </div>

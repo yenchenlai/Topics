@@ -45,7 +45,7 @@
                     {{auth('customer')->user()->name}}
                 </h4>
                 <h5>
-                    شماره تماس:
+                    電話號碼:
                     {{auth('customer')->user()->mobile}}
 
                 </h5>
@@ -54,26 +54,26 @@
             <br>
             <div class="border-x">
                 <h4>
-                    گیرنده:
+                    付款者:
                     {{$invoice->desc}}
                 </h4>
                 <p>
-                    آدرس:
+                    地址:
                     {{$invoice->address_alt}}
                 </p>
             </div>
         @else
             <div class="border-x">
                 <h4>
-                    گیرنده:
+                    付款者:
                     {{auth('customer')->user()->name}}
                 </h4>
                 <h5>
-                    شماره تماس:
+                    電話號碼:
                     {{auth('customer')->user()->mobile}}
                 </h5>
                 <p>
-                    آدرس:
+                    地址:
                     {{$invoice->getAddress()}}
                 </p>
             </div>

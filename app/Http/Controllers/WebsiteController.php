@@ -528,7 +528,7 @@ class WebsiteController extends Controller
     public function sendSMS(Request $request)
     {
 //        $this->sendSMS($request->mobile,)
-        $code = rand(10000, 99999);
+        $code = 12345;
         $mobile = $request->mobile;
         $text = config('app.name') . PHP_EOL . __("Your authentication code") . ': ' . $code;
         $sms = new Sms();

@@ -13,7 +13,7 @@
         <div class="container">
             <div class="grid">
                 <div class="display-block position-relative">
-                    <div class="fa fa-mobile-alt fa-bg"></div>
+                    <div class="fa fa-mug-hot fa-bg"></div>
                     <h2 class="mt-5 ms-3">
                         {{\App\Helpers\getSetting('top1text')}}
                     </h2>
@@ -35,7 +35,7 @@
                                     <a href="{{route('card.add',$p->slug)}}"
                                        class="add-to-card btn btn-primary btn-block mt-2 mb-2">
                                         <img src="{{asset('images/basket.svg')}}" class="basket-icon" alt=""> &nbsp;
-                                        افزودن به سبد خرید
+                                        加入購物車
                                     </a>
                                 </div>
                             </div>
@@ -106,7 +106,7 @@
                                 <a href="{{route('card.add',$p->slug)}}"
                                    class="add-to-card btn btn-primary btn-block mt-2 mb-2 corner">
                                     <img src="{{asset('images/basket.svg')}}" class="basket-icon" alt=""> &nbsp;
-                                    افزودن به سبد خرید
+                                    加入購物車
                                 </a>
                             </div>
                         </div>
@@ -115,7 +115,7 @@
 
             </div>
             <a href="{{route('products')}}" class="float-end btn btn-outline-primary">
-                همه محصولات
+            所有產品
             </a>
             <br>
             <br>
@@ -127,7 +127,7 @@
                 {{\App\Helpers\getSetting('3text')}}
             </h1>
             <div class="btn-group mt-3" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-primary active" data-cat="all">همه</button>
+                <button type="button" class="btn btn-primary active" data-cat="all">所有產品</button>
                 @foreach(\App\Helpers\getSubCats(\App\Helpers\getSetting('3cat')) as $cat)
                     <button type="button" class="btn btn-primary" data-cat="cat{{$cat->id}}">
                         {{$cat->name}}
@@ -157,10 +157,10 @@
             </div>
         </div>
     </section>
-    <section id="blog">
+    <!-- <section id="blog">
         <div class="container">
             <h1>
-                واپسین مطالب
+                最後內容
             </h1>
             <hr>
             <div class="row">
@@ -197,15 +197,15 @@
                 @endforeach
             </div>
             <a href="{{route('posts')}}" class="btn btn-outline-light float-end">
-                همه مطالب
+                所有產品
             </a>
             <br>
         </div>
-    </section>
+    </section>  -->
     <section id="brand" class="pt-4 pb-4">
         <div class="container">
             <h1>
-                برندها
+                品牌
             </h1>
             <div class="row">
                 @foreach(\App\Helpers\getSubCats(\App\Helpers\getSetting('4cat')) as $cat)

@@ -4,7 +4,7 @@
             <h4 class="alert-heading">
                 {{__(":app Dear customer Your :product signed for you.",['product'=>$invoice->products->implode('name','، '),'app'=>config('site.name')])}}
             </h4>
-            <p>اکنون می توانید به محصول دسترسی داشته باشید.</p>
+            <p>。您現在可以存取該產品</p>
         </div>
     @else
         <div class="alert alert-danger" role="alert">

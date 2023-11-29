@@ -26,7 +26,7 @@ class CatSaveRequest extends FormRequest
         return [
             //
             'name' => ['required', 'string', 'min:2', 'max:128'],
-            'description' => ['nullable', 'string', 'min:5'],
+            'description' => ['nullable', 'string', 'min:1'],
             'parent_id' => ['nullable', 'exists:cats,id'],
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'image2' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048'

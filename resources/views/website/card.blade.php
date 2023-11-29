@@ -11,17 +11,17 @@
                     <div class="progress-step">
                         <div class="step step1 done" data-id="step1" data-done=".progress-step .step1">
                             <i class="fa fa-shopping-bag"></i>
-                            سبد خرید
+                            購物車
                         </div>
                         <div class="step step2" data-id="step2"
                              data-done=".progress-step .step1,.progress-step  .step2">
                             <i class="fa fa-truck-fast"></i>
-                            اطلاعات ارسال
+                            運送資訊
                         </div>
                         <div class="step step3" data-id="step3"
                              data-done=".progress-step .step1,.progress-step .step2, .progress-step .step3">
                             <i class="fa fa-credit-card"></i>
-                            اطلاعات پرداخت
+                            付款資訊
                         </div>
                     </div>
                     @include('starter-kit::component.err')
@@ -199,15 +199,13 @@
                                                 @endforeach
                                             </table>
                                         </div>
-                                        <div class="alert alert-success text-center">
-                                            شما می‌توانید محصولات را رزرو کنید , برای اینکار به مرحله بعدی بروید و
-                                            <b>
-                                                گزینه فعال سازی
-                                                حالت
-                                                رزرو
+                                        <div class="alert alert-success text-center">您可以預訂產品，進入下一步<b>
+                                        啟動選項
+                                                的狀態
+                                                預訂
                                             </b>
 
-                                            را انتخاب کنید
+                                            選擇
                                         </div>
                                     </div>
                                     <div id="step2" class="step">
@@ -252,16 +250,15 @@
                                                             <label for="rv{{$k}}" class="form-check-label">
 
                                                                 &nbsp;
-                                                                اضافه شدن به سفارش با مبلغ:
+                                                                ：加到訂單並註明金額
                                                                 <b>
                                                                     ({{number_format($r->total_price)}})
                                                                 </b>
-
-                                                                و به آدرس:
+                                                                ：並寄至地址
                                                                 <b>
                                                                     {{$r->customer->address}}
-                                                                </b>
-                                                                و زمان سفارش:
+                                                                </b>：
+                                                                以及下單時間
                                                                 <b>
                                                                     {{$r->created_at->diffForHumans()}}
                                                                 </b>
@@ -284,9 +281,7 @@
                                         <div>
                                             <div class="text-left p-3">
                                                 @if(auth('customer')->check() && auth('customer')->user()->colleague == 1)
-                                                    <div class="p-3 ">
-                                                        اگر همکاری هستید آدرس مشتری را در این قسمت بنویسید
-                                                    </div>
+                                                    <div class="p-3 ">如果您是合作夥伴，請在此欄位中填寫客戶的地址</div>
                                                 @endif
                                                 <label class="desc">
                                                     {{__("Description")}}
@@ -330,9 +325,9 @@
                                         @if (!Auth::guard('customer')->check())
                                             <br>
                                             <div class="alert alert-warning">
-                                                شما ثبت نام نکرده اید.
+                                            。您還沒有註冊
                                                 <br>
-                                                لطفا پیش از ادامه ثبت نام کنید یا وارد شوید
+                                                請先註冊或登錄，然後再繼續
                                             </div>
                                         @endif
                                     </div>
@@ -341,7 +336,7 @@
                             <div class="col-md-3">
                                 <div class="alert alert-info text-center">
                                     <b class="text-dark display-block mb-2">
-                                        مبلغ قابل پرداخت
+                                        應付金額
                                     </b>
 
                                     <h5>
@@ -349,13 +344,13 @@
                                <span id="last-price">
                                     {{number_format($tot)}}
                                </span>
-                                            {{config('app.currency_type')}}
+                                            {{config('app.currency_type')}} 
                                         </div>
                                     </h5>
                                     &nbsp;@if (Auth::guard('customer')->check())
-                                        خریدار:
+                                    ：買方
                                         {{auth('customer')->user()->name}} -
-                                        موبایل: {{auth('customer')->user()->mobile}}
+                                        ：賣方 {{auth('customer')->user()->mobile}}
                                         <hr>
                                         <h5>
                                             {{__("choose addrress")}}:
@@ -364,7 +359,7 @@
                                             <label>
                                                 <input type="radio" name="address_id" value="0" checked>
                                                 {{auth('customer')->user()->address}} - کد
-                                                پستی: {{auth('customer')->user()->postal_code??'X'}}
+                                                ：郵件 {{auth('customer')->user()->postal_code??'X'}}
                                             </label>
                                         </div>
                                         @foreach(auth('customer')->user()->addresses as $ad)
@@ -377,20 +372,20 @@
                                             </div>
                                         @endforeach
                                         @if(strlen(auth('customer')->user()->address) < 10)
-                                            تا زمانی که اطلاعات خود را تکمیل نکنید امکان ثبت سفارش ندارید
+                                        在您填寫完整資訊之前，您無法下訂單
                                             <br>
                                             <a href="{{route('customer')}}" class="btn btn-warning">
-                                                تکمیل اطلاعات
+                                            完成訊息
                                             </a>
                                         @else
                                             <button type="submit" class="btn btn-success float-end me-3 ms-3">
                                                 <i class="far fa-credit-card"></i>
-                                                پرداخت از درگاه های آنلاین
+                                                從線上入口網站付款
                                             </button>
                                             <button type="submit" class="btn btn-secondary  float-end " name="nopay"
                                                     value="no-payment">
                                                 <i class="far fa-credit-card"></i>
-                                                ثبت سفارش پرداخت اعتباری + آنلاین
+                                                註冊信用支付訂單+在線
                                             </button>
                                             <br>
                                             <br>
@@ -403,7 +398,7 @@
                                         <a href="{{route('sign')}}" class="btn btn-primary w-100">
                                             <i class="fa fa-user"></i>
                                             <span>
-                                              برای ادامه لطفا ثبت نام / ورود کنید
+                                            請註冊/登入以繼續
                                 </span>
                                         </a>
                                     @endif
@@ -425,7 +420,7 @@
     @else
         <div class="container text-center">
             <h2 class="my-5">
-                سبد خرید شما خالی است
+            你的購物車是空的
             </h2>
         </div>
     @endif

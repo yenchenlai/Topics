@@ -9,7 +9,7 @@
 {{--    </div>--}}
     <section id="list" >
         <h1 style="display: none">
-            {{$title??'محصولات'}}
+            {{$title??'產品'}}
         </h1>
         <div class="container pt-5">
             <div class="row">
@@ -19,7 +19,7 @@
                             <img class=" mt-1 me-3 float-start icon-size" style="position: relative;top: -25px"
                                  src="{{asset('images/track.svg')}}" alt="ارسال آنی">
                             <h6 class="mt-1 text-muted">
-                                ارسال آنی در تهران
+                                即時送貨
                             </h6>
                             <hr>
                         </div>
@@ -62,7 +62,7 @@
                     </div>
                 @else
                     <h1 class="col-md-12">
-                        محصولی مطابق با درخواست شما پیدا نشد
+                    沒有找到符合您要求的產品
                     </h1>
                 @endif
             </div>

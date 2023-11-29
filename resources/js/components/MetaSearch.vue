@@ -7,27 +7,27 @@
                 <input name="ext" @change="apply" v-model="ext" type="checkbox">
                 <div class="slider round"></div>
             </label>
-            فقط کالا‌های موجود
+            僅可用項目
         </div>
         <div :class="cls">
             <h2 id="fon">
-                مرتب سازی بر اساس:
+                訂購依據:
             </h2>
             <input type="hidden" name="sort" value="sale" id="sort">
             <span class="badge p-2 mb-1 bg-secondary" id="sale" @click="changeSort('sale',$event)">
-                پرفروش‌ترین
+                最暢銷
             </span>
             <span class="badge p-2 mb-1 bg-secondary" id="new" @click="changeSort('new',$event)">
-                جدیدترین
+                最新的
             </span>
             <span class="badge p-2 mb-1 bg-secondary" id="fav" @click="changeSort('fav',$event)">
-                محبوب‌ترین
+                最受歡迎
             </span>
             <span class="badge p-2 mb-1 bg-secondary" id="cheap" @click="changeSort('cheap',$event)">
-                ارزان‌‌ترین
+                最便宜的
             </span>
             <span class="badge p-2 mb-1 bg-secondary" id="expensive" @click="changeSort('expensive',$event)">
-                گران‌ترین
+                最昂貴的
             </span>
         </div>
 
@@ -117,7 +117,7 @@
 
         <button class="btn btn-primary w-100">
             <i class="fa fa-check float-start mt-1"></i>
-            اعمال
+            搜尋
         </button>
     </form>
 </template>

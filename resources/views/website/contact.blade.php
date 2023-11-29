@@ -5,7 +5,7 @@
 @section('content')
     <div class="container">
         <div style="text-align: center; padding-top: 60px;">
-            <h3>ارتباط با
+            <h3>關係
                 {{config('app.name')}}
             </h3>
             <p style="color: gray; text-align: center; padding-top: 10px; display: none">
@@ -23,7 +23,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12" style="padding-top: 20px;padding-bottom: 20px;">
-                                    <h2 style="font-size:20px;padding-bottom: 15px;">اطلاعات تماس</h2>
+                                    <h2 style="font-size:20px;padding-bottom: 15px;">聯絡方式</h2>
                                     {!!  \App\Helpers\getSetting('concon') !!}
                                 </div>
                             </div>

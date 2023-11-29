@@ -68,8 +68,7 @@
                             <li data-id="#crt">
                                 <span>
                                     <i class="fa fa-coins"></i>
-                                مدیریت کیف پول
-                                </span>
+                                錢包管理</span>
                             </li>
                             <li data-id="#favs">
                                 <span>
@@ -104,9 +103,7 @@
                                         <h1>
                                             {{auth('customer')->user()->addresses()->count()+1}}
                                         </h1>
-                                        <h5>
-                                            آدرس ها
-                                        </h5>
+                                        <h5>地址</h5>
                                     </a>
                                 </div>
                                 <div>
@@ -115,9 +112,7 @@
                                         <h1>
                                             {{auth('customer')->user()->tickets()->count()}}
                                         </h1>
-                                        <h5>
-                                            پشتیبانی
-                                        </h5>
+                                        <h5>支援</h5>
                                     </div>
                                 </div>
                                 <div>
@@ -127,7 +122,7 @@
                                             {{auth('customer')->user()->invoices()->count()}}
                                         </h1>
                                         <h5>
-                                            سفارش‌ها
+                                            購物
                                         </h5>
                                     </div>
                                 </div>
@@ -142,7 +137,7 @@
                                         </h1>
 
                                         <h5>
-                                            موجودی کیف پول
+                                        錢包餘額
                                         </h5>
                                     </div>
                                 </div>
@@ -157,23 +152,22 @@
                                 </div>
                             @endif
                             <div class="alert border-1 border-secondary" style="min-height: 14rem">
-                                <h5>
-                                    آخرین سفارش ها
+                                <h5>最新訂單
                                 </h5>
                                 @if(auth('customer')->user()->invoices()->count() > 0)
                                     <table class="table table-striped w-100 text-center " >
                                         <tr>
                                             <td>
-                                                شماره
+                                            編號順序
                                             </td>
                                             <td>
-                                                مبلغ
+                                            金額
                                             </td>
                                             <td>
-                                                وضعیت
+                                            付款狀況
                                             </td>
                                             <td>
-                                                زمان
+                                            時間
                                             </td>
                                         </tr>
                                         @foreach(auth('customer')->user()->invoices()->limit(5)->get() as $in )
@@ -186,7 +180,7 @@
                                                     {{config('app.currency_type')}}
                                                 </td>
                                                 <td>
-                                                    {{__($in->status)}}
+                                            {{__($in->status)}}
                                                 </td>
                                                 <td>
                                                     {{$in->created_at->diffForHumans()}}
@@ -196,9 +190,9 @@
                                     </table>
                                 @else
                                     <div class="alert alert-secondary">
-                                        سفارشی ثبت نشده است
+                                    訂單未註冊
                                         <a href="{{route('welcome')}}" class="btn btn-success w-25 d-block m-auto mt-2">
-                                            رفتن به فروشگاه
+                                        去商店
                                         </a>
                                     </div>
                                 @endif
@@ -214,7 +208,7 @@
                                 <div class="col-md-6 mt-3">
                                     <div class="form-group">
                                         <label for="name">
-                                            نام و نام خانوادگی
+                                        名字和姓氏
                                         </label>
                                         <input name="name" type="text"
                                                class="form-control @error('name') is-invalid @enderror"
@@ -247,7 +241,7 @@
                                 <div class="col-md-4 mt-3">
                                     <div class="form-group">
                                         <label for="mobile">
-                                            موبایل
+                                            電話
                                         </label>
                                         <input name="mobile" readonly type="text"
                                                class="form-control @error('mobile') is-invalid @enderror"
@@ -393,7 +387,7 @@
                             </h4>
                             <hr>
                             <h5 class="p-3">
-                                تاریخچه استفاده اعتبار
+                            信用卡使用記錄
                             </h5>
                             <ul class="list-group m-2">
                                 @foreach(auth('customer')->user()->credits  as $c)
@@ -402,7 +396,7 @@
                                             <div class="col-md">
 
 
-                                                مبلغ
+                                            編號順序
                                                 {{number_format($c->amount)}}
                                                 {{config('app.currency_type')}}
                                             </div>
@@ -499,7 +493,7 @@
                             <div class="col-12">
                                 <div class="form-group">
                                     <label for="title">
-                                        متن درخواست خود را به همراه توضیحات در مورد فروشگاه بنویسید
+                                    寫下您的請求文字以及有關商店的描述
                                     </label>
                                     <input type="hidden" id="title" name="title" value="{{__("Application request")}}">
                                 </div>
@@ -526,9 +520,9 @@
 
                             @if(auth('customer')->user()->products()->count() == 0)
                                 <div class="alert alert-secondary">
-                                    محصولی به علاقه‌مندی هایتان اضافه نشده است.
+                                沒有產品被加入到您的收藏夾.
                                     <a href="{{route('welcome')}}" class="btn btn-success w-25 d-block m-auto mt-2">
-                                        رفتن به فروشگاه
+                                    去商店
                                     </a>
                                 </div>
                             @else
